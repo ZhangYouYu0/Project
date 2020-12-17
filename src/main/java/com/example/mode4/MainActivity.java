@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.mode4.Base.BaseActivity;
+import com.example.mode4.Presenter.MainPresenterImpl;
+
+public class MainActivity extends BaseActivity<MainPresenterImpl> implements  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
