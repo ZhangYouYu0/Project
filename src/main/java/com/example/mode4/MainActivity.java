@@ -1,16 +1,22 @@
 package com.example.mode4;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.mode4.Base.BaseActivity;
 import com.example.mode4.Bean.FooBean;
 import com.example.mode4.Contract.Contract;
 import com.example.mode4.Presenter.MainPresenterImpl;
 
-public class MainActivity extends BaseActivity<MainPresenterImpl> implements Contract.View {
+import java.util.ArrayList;
 
+public class MainActivity extends BaseActivity<MainPresenterImpl> implements Contract.View {
+    RecyclerView recyclerview;
+    ArrayList<FooBean.DataDTO> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +25,15 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Con
 
     @Override
     protected void initData() {
-
+        presenter.p();
     }
 
     @Override
     protected void initView() {
-
+         recyclerview = findViewById(R.id.recyclerview);
+         recyclerview.setLayoutManager(new LinearLayoutManager(this));
+         list = new ArrayList<>();
+        recyclerview.setAdapter();
     }
 
     @Override
