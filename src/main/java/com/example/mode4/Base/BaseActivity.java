@@ -16,6 +16,8 @@ public abstract class BaseActivity <I extends BasePresenter> extends AppCompatAc
             presenter=add();
             presenter.attachView(this);
         }
+        initView();
+        initData();
     }
 
     protected abstract void initData();
